@@ -142,35 +142,7 @@ To uninstall vscode extensions execute uninstall-vscode-extensions.sh inside vsc
 # ./uninstall-vscode-extensions.sh
 
 ----------------------------------------------------------------------------------------------------------------------------
-// src/main.rs
 
-mod helper; // Include the helper module
-fn main() {
-    let x: i32 = 5; 
-    let y =  10; // Missing type annotation (rust-analyzer should suggest i32)
+Note : folder whose names starts with '.' are hidden by default. So, ensure that you have checked the option show hiden files.
 
-    let sum = add(x, y); 
-    println!("The sum of x and y is: {}", sum); 
-
-    let original_price = 100.0;
-    let discount = 0.1;
-    let final_price = helper::apply_discount(original_price, discount);
-    println!("Final price after discount: {}", final_price);
-
-}
-
-fn add(a: i32, b: i32) -> i32 { 
-    a + b 
-}
-
-
-// This is a simple mod file named `helper.rs`
-pub fn apply_discount(price: f32, discount: f32) -> f32 {
-    let _i = 143;
-    price * (1.0 - discount)
-    
-}
-
-
-
-
+-----------------------------------------------------------------------------------------------------------------------------
