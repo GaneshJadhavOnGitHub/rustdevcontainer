@@ -143,6 +143,6 @@ To uninstall vscode extensions execute uninstall-vscode-extensions.sh inside vsc
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-Note : folder whose names starts with '.' are hidden by default. So, ensure that you have checked the option show hiden files.
+Note : folders whose name start with '.' are hidden by default. So, ensure that you have checked the option show hiden files.
 
 -----------------------------------------------------------------------------------------------------------------------------
