@@ -1,0 +1,96 @@
+Hardware and OS Details 
+
+Hardware Model : Lenovo ThinkPad T430
+Memory   : 16.0 GiB
+Processor : Intel® Core™ i5-3320M CPU @ 2.60GHz × 4
+Graphics : Mesa Intel® HD Graphics 4000 (IVB GT2)
+Disk Capacity : 560.1 GB
+OS Name : Ubuntu 22.04.5 LTS
+OS Type : 64-bit
+GNOME Version : 42.9
+OS Codename :	jammy
+
+-----------------------------------
+Docker Desktop 
+
+docker version
+Client: Docker Engine - Community
+ Version:           27.4.0
+ API version:       1.47
+ Go version:        go1.22.10
+ Git commit:        bde2b89
+ Built:             Sat Dec  7 10:38:40 2024
+ OS/Arch:           linux/amd64
+ Context:           desktop-linux
+
+Server: Docker Desktop 4.36.0 (175267)
+ Engine:
+  Version:          27.3.1
+  API version:      1.47 (minimum version 1.24)
+  Go version:       go1.22.7
+  Git commit:       41ca978
+  Built:            Fri Sep 20 11:41:11 2024
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.7.21
+  GitCommit:        472731909fa34bd7bc9c087e4c27943f9835f111
+ runc:
+  Version:          1.1.13
+  GitCommit:        v1.1.13-0-g58aa920
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+docker compose version
+Docker Compose version v2.30.3-desktop.1
+
+
+-----------------------------------------------
+VS-Code.
+
+Version: 1.96.2
+Commit: fabdb6a30b49f79a7aba0f2ad9df9b399473380f
+Date: 2024-12-19T10:22:47.216Z
+Electron: 32.2.6
+ElectronBuildId: 10629634
+Chromium: 128.0.6613.186
+Node.js: 20.18.1
+V8: 12.8.374.38-electron.0
+OS: Linux x64 6.8.0-50-generic
+
+---------------------------
+
+Following Extensions for VS-Code.
+
+1. Docker from Microsoft
+   
+Identifier : ms-azuretools.vscode-docker
+Version : 1.29.3
+Last Updated : 2024-12-27, 21:29:51
+Size : 6.6 MB
+ 
+2.  Remote Development From Microsoft
+
+Identifier : ms-vscode-remote.vscode-remote-extensionpack
+Version : 0.26.0
+Last Updated : 2024-12-27, 21:34:27
+Size : 39.3 KB
+   
+3. Dev Containers From Microsoft
+
+Identifier : ms-vscode-remote.remote-containers
+Version : 0.394.0
+Last Updated : 2024-12-27, 21:33:01
+Size : 7.4 MB
+Cache : 3.2 KB
+
+4. YAML from Red Hat
+
+Identifier : redhat.vscode-yaml
+Version : 1.15.0
+Published : 2017-10-05, 01:11:49
+Last Released : 2024-06-07, 11:32:23
+---------------------------------
+
+

@@ -1,0 +1,78 @@
+# Tested on Jan29, 2025 - Working 
+# Author : Ganesh K Jadhav
+# Date : January 23 to January 29, 2025.
+# Version : 1.0.0
+# Description : Rust-devcontainer for rust programming.
+# The moto behind writing docker-compose.yml is that,
+# we can add instructions/attributes later in this file for database containers.
+
+
+# First execute init.sh then build image and spin-up containers thorugh vs-code commands.
+
+# As per new docker compose specification, it is not mandatory to specify version, so skipped version.
+
+# We will have following service
+# rust
+# This service will spin an instance of container with name same as service name.  
+services:
+  rust:
+    container_name: rust
+    build:
+      # build context is current directory.
+      context: .
+      # We have separate Dockerfile to build image of rust dev-container.
+      # This image will be used to spin up rust dev container.
+      dockerfile: Dockerfile
+    #command: tail -f /dev/null # Infinite loop to keep the container running...
+    volumes:
+    # If this docker-compose.yml file is inside the .devcontainer folder,
+    # then the parent folder (which contains .devcontainer) is mounted to 
+    # /user/workspace inside the container. This ensures that project files 
+    # remain on the host machine and persist even after the container is 
+    # stopped or removed.
+    
+    # The init.sh script creates a '.zsh_history' file, which is mounted to 
+    # '/root/.zsh_history' inside the container. Since '/root/.zsh_history' 
+    # stores the Zsh command history, this mount ensures that the command 
+    # history is preserved across container restarts and removals.
+      - ..:/user/workspace
+      - ../history/.zsh_history:/root/.zsh_history
+      
+    # Specify env_file as .env file, which has values of different Environment Variables.
+    env_file:
+      - .env    
+    # This container listens on port 8001, and Docker maps the container's 
+    # port 8001 to port 8000 on the host machine.
+    # If an external client (e.g., Postman, Thunder Client, or a browser) 
+    # needs to communicate with the container, requests can be sent to 
+    # port 8000 on the host.
+    # Docker forwards these requests from port 8000 on the host to port 8001 
+    # Inside the container,  rust code will listen on port 8001 and handle the requests.
+    # This mapping is optional and only needed if external access is required.
+    ports:
+      - "8000:8001"
+    # restart: unless-stopped policy is recommended for development environment, as 
+    # we want our container to restart automatically after accidental stops or host reboots, 
+    # but we also want the flexibility to stop them manually for debugging or maintenance.
+    restart: unless-stopped
+    
+    # Security options and 'cap_add' are required for debuggers like LLDB and GDB to work properly.
+
+    # Capabilities allows users to grant specific permissions to processes and users without giving them full root access.
+    # cap_add: Specifies additional capabilities for this service.   
+    cap_add:
+      # The 'SYS_PTRACE' capability is required (should be granted) for LLDB and GDB debugging.
+      # So that, LLDB debugger can Trace and control the execution of another running process.
+      - SYS_PTRACE
+    # Configure security-related options for this service.
+    security_opt:
+      # For debugging with LLDB, disable the default seccomp profile in the container(service).
+      # Seccomp (Secure Computing Mode) is a Linux kernel mechanism that restricts the system calls that a process can make.
+      # For LLDB to function properly, seccomp should be disabled. 
+      # This is done by setting its value to 'unconfined'.
+      - seccomp:unconfined
+  
+# Top level 'volumes' section which lists all the volumes in this compose file.         
+volumes:
+  ..: 
+  .zsh_history: 

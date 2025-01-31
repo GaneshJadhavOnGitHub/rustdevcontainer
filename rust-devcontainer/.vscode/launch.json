@@ -1,0 +1,20 @@
+// vs-code debugger configuration.
+// Requirement : lldb debugger must be installed inside container.
+//               vs-code CodeLLDB extension must be installed inside devcontainer. 
+{   
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug",
+            // Executable which you want to debug.
+            "program": "${workspaceFolder}/rust_programs/hello/target/debug/hello",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+        }
+    ]
+}

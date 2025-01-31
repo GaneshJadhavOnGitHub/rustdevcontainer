@@ -1,0 +1,11 @@
+{
+
+  "crates": [
+    {
+      
+      "root_module": "./rust_programs/hello/src/main.rs",
+      "edition": "2021",
+      "deps": []
+    }
+  ]
+}
