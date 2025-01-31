@@ -1,2 +1,2 @@
 # rustdevcontainer
-Dev container for rust programming.
+Dev container for Rust programming.
