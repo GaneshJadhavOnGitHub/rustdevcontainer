@@ -2,7 +2,7 @@
 
 REM ---------------------------------------------------------------------------------------------------------------
 REM Author : Ganesh K Jadhav
-REM Date : January 07, 2025.
+REM Date : February 01, 2025.
 REM Version : 1.0.0
 REM Description : Small batch script to create the 'rust_programs' directory and 'history' directory for .zsh_history file.
 REM ---------------------------------------------------------------------------------------------------------------
