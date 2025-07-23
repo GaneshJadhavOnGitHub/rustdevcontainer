@@ -1,3 +1,3 @@
 # rustdevcontainer
-Dev container for Rust programming.
-For system requirement please refer System
+Dev container for Rust programming.  
+For system requirement please refer System_Requirements.txt.  
